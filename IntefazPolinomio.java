@@ -24,7 +24,32 @@ public class IntefazPolinomio {
 			}
 				
 			else if (option == 2) {
-				System.out.println("Opcion 2");
+				System.out.println("Opcion 2: Suma. \t Ingrese el numero de terminos de su primer polinomio.");
+				int cantidad = s.nextInt();
+				for (int i = 1; i <= cantidad; i++) {
+					System.out.print("Termino: "+i+"\n");
+					System.out.print("Ingrese coeficiente: ");
+					int coef = s.nextInt();
+					System.out.print("Ingrese exponente: ");
+					int expon = s.nextInt();
+					Monomio p1 = new Monomio(coef, expon);
+					}	
+				System.out.println("Ingrese el numero de terminos de su segundo polinomio.");
+				int cantidad = s.nextInt();
+				for (int i = 1; i <= cantidad; i++) {
+					System.out.print("Termino: "+i+"\n");
+					System.out.print("Ingrese coeficiente: ");
+					int coef2 = s.nextInt();
+					System.out.print("Ingrese exponente: ");
+					int expon2 = s.nextInt();
+					Monomio p2 = new Monomio(coef2, expon2);
+					}	
+				
+				System.out.println("La suma de los polinomios es:");
+				
+				p1.suma(p2);
+				//imprimir la suma de los dos, (toString de otro polinomio p3?)
+
 			}
 				
 			else if (option == 3) {
