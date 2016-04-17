@@ -23,13 +23,7 @@ public class Polinomio {
 		p2.add(1,3);
 		System.out.println(p2.toString());
 
-		Polinomio resultado = new Polinomio();
-
-		int i = 0;
-		while(i < p1.polinomio.size()) {
-			resultado.add(p1.polinomio.get(i).suma(p2.polinomio.get(i)));
-			i++;
-		}
+		Polinomio resultado = p1.suma(p2);
 
 		System.out.println(resultado.toString());
 
@@ -43,6 +37,19 @@ public class Polinomio {
 
 	public void add(Monomio m) {
 		polinomio.add(m);
+	}
+
+
+	// Sólo suma polinomios del mismo grado, y ordenados de grado 0 a grado n, sin espacios.
+	public Polinomio suma(Polinomio p2) {
+		if(p2 == null || this.polinomio.size() != p2.polinomio.size()) throw new IllegalArgumentException();
+		Polinomio resultado = new Polinomio();
+		int i = 0;
+		while(i < p2.polinomio.size()) {
+			resultado.add(this.polinomio.get(i).suma(p2.polinomio.get(i)));
+			i++;
+		}
+		return resultado;
 	}
 
 	public String toString() {
