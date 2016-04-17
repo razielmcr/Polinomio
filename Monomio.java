@@ -24,6 +24,10 @@ public class Monomio<T> implements Comparable<T> {
 		return new Monomio(coeficiente + m.getCoeficiente(), exponente);
 	}
 
+	public Monomio multiplica(Monomio m) {
+		return new Monomio(coeficiente * m.getCoeficiente(), exponente * m.getExponente());
+	}
+
 	public String toString() {
 		String coef = new String();
 		coef = (coeficiente < 0) ? "- " + coeficiente : "+ " + coeficiente;
